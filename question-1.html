@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question-1</title>
+</head>
+<body>
+  <form id="bmiForm">
+   <fieldset>
+    <legend>
+      BMI Form
+    </legend>
+    <label for="height">Height : </label>
+    <input type="number" placeholder="enter your height in metres" id="height" step="any">
+    <br>
+    <label for="weight">Weight : </label>
+    <input type="number" placeholder="enter your weight" style="margin-top: 4px; margin-bottom: 10px;" id="weight" step="any">
+    <br>
+    <button type="submit" value="submit">Submit</button>
+   </fieldset>
+   <div id="result"></div>
+  </form>
+  <script>
+   
+    document.getElementById("bmiForm").addEventListener("submit",(e) =>
+    {
+      e.preventDefault();
+      const getHeight = document.getElementById("height")
+      const getWeight = document.getElementById("weight")
+      let height = parseFloat(getHeight.value )
+      let weight = parseFloat(getWeight.value)
+
+      if (isNaN(height) || isNaN(weight) || height <= 0 || weight <= 0) {
+        alert('Please enter valid height and weight values.');
+        return;
+      }
+      
+      const result = (weight / (height * height)).toFixed(1);
+      document.getElementById('result').textContent = `Your BMI is: ${result}`;
+    })
+  </script>
+</body>
+</html>

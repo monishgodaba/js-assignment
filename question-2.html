@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question-2</title>
+  <style>
+    span{
+      background-color: rgba(248, 5, 5, 0.834);
+      outline: 4px solid black;
+      color: rgba(255, 255, 255, 0.874);
+      margin-left: 5px;
+      padding: 5px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h2></h2>
+  <script>
+
+  function time()
+  {
+  const date = new Date() 
+  const hours = String(date.getHours()).padStart(2,"0")
+  const minutes = String(date.getMinutes()).padStart(2,"0")
+  const seconds = String(date.getSeconds()).padStart(2,"0")
+  document.querySelector('h2').innerHTML = `Digital Clock:<span>${hours}:${minutes}:${seconds}</span>`
+  }
+time()
+  setInterval(time,1000)
+  </script>
+
+</body>
+</html>
